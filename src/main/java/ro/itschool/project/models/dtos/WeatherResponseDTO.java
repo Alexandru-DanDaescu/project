@@ -1,4 +1,4 @@
-package ro.itschool.project.models;
+package ro.itschool.project.models.dtos;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 @Data
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class WeatherResponse {
+public class WeatherResponseDTO {
 
     private String name;
 

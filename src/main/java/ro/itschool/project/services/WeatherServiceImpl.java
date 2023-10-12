@@ -5,14 +5,14 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import org.springframework.stereotype.Service;
-import ro.itschool.project.models.WeatherResponse;
+import ro.itschool.project.models.dtos.WeatherResponseDTO;
 
 import java.io.IOException;
 
 @Service
 public class WeatherServiceImpl implements WeatherService{
     @Override
-    public WeatherResponse getCityWeather(String city) throws IOException {
+    public WeatherResponseDTO getCityWeather(String city) throws IOException {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
                 .url("http://api.weatherapi.com/v1/current.json?key=ec8face8cc00456babd144815230510&q=Bucharest&aqi=no")
@@ -21,9 +21,9 @@ public class WeatherServiceImpl implements WeatherService{
 
         ObjectMapper objectMapper = new ObjectMapper();
 
-        WeatherResponse weatherResponse = objectMapper.readValue(response.body().toString(), WeatherResponse.class);
+        WeatherResponseDTO weatherResponseDTO = objectMapper.readValue(response.body().toString(), WeatherResponseDTO.class);
 
-        System.out.println(weatherResponse);
+        System.out.println(weatherResponseDTO);
 
         return null;
     }

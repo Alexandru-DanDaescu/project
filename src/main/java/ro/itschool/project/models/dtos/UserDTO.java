@@ -21,7 +21,7 @@ public class UserDTO implements Serializable {
     @NotEmpty
     private String email;
 
-    @NotEmpty
+
     private int age;
 
 

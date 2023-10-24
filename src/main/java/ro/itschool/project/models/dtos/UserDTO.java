@@ -12,13 +12,13 @@ public class UserDTO implements Serializable {
 
     private Long id;
 
-    @NotEmpty(message = "This field should not be empty")
+    //@NotEmpty(message = "This field should not be empty")
     private String firstName;
 
-    @NotEmpty
+    //@NotEmpty
     private String lastName;
 
-    @NotEmpty
+    //@NotEmpty
     private String email;
 
 
